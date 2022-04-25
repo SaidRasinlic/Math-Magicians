@@ -4,6 +4,8 @@
 - Make simple calculations.
 - Read a random math-related quote.
 
+![Project Image](./src/assets/images/project.png)
+
 
 ## Built With
 
@@ -34,7 +36,7 @@ To get a local copy up and running follow these simple example steps.
 - Clone GitHub repository `gh repo clone SaidRasinlic/Math-Magicians`
 - Install the devDependencies `npm install`
 - Build the app `npm run build`
-- Serve it with static server `serve -s build`
+- Run the app `npm run start`
 
 *Congratulations, enjoy the application! It should be on http://localhost:3000/*
 ## Authors
