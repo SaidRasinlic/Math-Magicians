@@ -1,5 +1,5 @@
-import './css/calculator.css';
 import React from 'react';
+import './css/calculator.css';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
