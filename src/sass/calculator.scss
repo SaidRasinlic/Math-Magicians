@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@200&display=swap');
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#calculator {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(70px, 150px));
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 20px;
+  min-height: 100px;
+  font-weight: 700;
+}
+
+.calc-display {
+  text-align: right;
+  grid-column: span 4;
+  height: 80px;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(121, 126, 139, 0.849);
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.orange {
+  background-color: rgb(241, 136, 45);
+}
