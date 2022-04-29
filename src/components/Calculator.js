@@ -1,37 +1,67 @@
 import React from 'react';
+import '../css/calculator.css';
+import CalculatorButton from './CalculatorButton';
+import calculate from '../logic/calculate';
 
 export default class Calculator extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      value: 0,
+      displayOutput: '0',
+      total: null,
+      next: null,
+      operation: null,
     };
+
+    this.performCalculation = this.performCalculation.bind(this);
+  }
+
+  performCalculation(buttonName) {
+    const { total, next, operation } = calculate(this.state, buttonName);
+    let { displayOutput } = this.state;
+
+    if (total || next || operation) {
+      displayOutput = (total ?? '') + (operation == null ? '' : ` ${operation} `) + (next ?? '');
+    } else {
+      displayOutput = '0';
+    }
+
+    this.setState({
+      displayOutput,
+      total,
+      next,
+      operation,
+    });
   }
 
   render() {
-    const { value } = this.state;
+    const { displayOutput } = this.state;
+
     return (
       <div id="calculator">
-        <input className="calc-display" type="text" defaultValue={value} />
-        <button className="btn" type="button">AC</button>
-        <button className="btn btn2" type="button">+/-</button>
-        <button className="btn" type="button">%</button>
-        <button className="btn orange" type="button">÷</button>
-        <button className="btn" type="button">7</button>
-        <button className="btn" type="button">8</button>
-        <button className="btn" type="button">9</button>
-        <button className="btn orange" type="button">x</button>
-        <button className="btn" type="button">4</button>
-        <button className="btn" type="button">5</button>
-        <button className="btn" type="button">6</button>
-        <button className="btn orange" type="button">-</button>
-        <button className="btn" type="button">1</button>
-        <button className="btn" type="button">2</button>
-        <button className="btn" type="button">3</button>
-        <button className="btn orange" type="button">+</button>
-        <button className="btn span-2" type="button">0</button>
-        <button className="btn" type="button">.</button>
-        <button className="btn orange" type="button">=</button>
+        <div className="calc-display">
+          {displayOutput}
+        </div>
+        <CalculatorButton value="AC" performCalculation={this.performCalculation} />
+        <CalculatorButton value="+/-" performCalculation={this.performCalculation} />
+        <CalculatorButton value="%" performCalculation={this.performCalculation} />
+        <CalculatorButton value="÷" orangeCell performCalculation={this.performCalculation} />
+        <CalculatorButton value="7" performCalculation={this.performCalculation} />
+        <CalculatorButton value="8" performCalculation={this.performCalculation} />
+        <CalculatorButton value="9" performCalculation={this.performCalculation} />
+        <CalculatorButton value="x" orangeCell performCalculation={this.performCalculation} />
+        <CalculatorButton value="4" performCalculation={this.performCalculation} />
+        <CalculatorButton value="5" performCalculation={this.performCalculation} />
+        <CalculatorButton value="6" performCalculation={this.performCalculation} />
+        <CalculatorButton value="-" orangeCell performCalculation={this.performCalculation} />
+        <CalculatorButton value="1" performCalculation={this.performCalculation} />
+        <CalculatorButton value="2" performCalculation={this.performCalculation} />
+        <CalculatorButton value="3" performCalculation={this.performCalculation} />
+        <CalculatorButton value="+" orangeCell performCalculation={this.performCalculation} />
+        <CalculatorButton value="0" spanCell performCalculation={this.performCalculation} />
+        <CalculatorButton value="." performCalculation={this.performCalculation} />
+        <CalculatorButton value="=" orangeCell performCalculation={this.performCalculation} />
       </div>
     );
   }
