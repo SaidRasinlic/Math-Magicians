@@ -1,65 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/calculator.css';
 import CalculatorButton from './CalculatorButton';
 import calculate from '../logic/calculate';
 
-export default class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+export default function Calculator() {
+  const [calculator, setCalculatorState] = useState(
+    {
       displayOutput: '0',
       total: null,
       next: null,
       operation: null,
-    };
+    },
+  );
 
-    this.calculatorExecutor = this.calculatorExecutor.bind(this);
-  }
+  let { displayOutput } = calculator;
 
-  calculatorExecutor(buttonName) {
-    const { total, next, operation } = calculate(this.state, buttonName);
-    let { displayOutput } = this.state;
+  const calculatorExecutor = (buttonName) => {
+    const { total, next, operation } = calculate(calculator, buttonName);
 
     if (total || next || operation) {
       displayOutput = (total ?? '') + (operation == null ? '' : ` ${operation} `) + (next ?? '');
     } else {
       displayOutput = '0';
     }
-
-    this.setState({
+    setCalculatorState({
       displayOutput,
-      total,
+      total: total ?? 0,
       next,
       operation,
     });
-  }
+  };
 
-  render() {
-    const { displayOutput } = this.state;
-    const calculatorButtons = [
-      'AC', '+/-', '%', '÷',
-      '7', '8', '9', 'x',
-      '4', '5', '6', '-',
-      '1', '2', '3', '+',
-      '0', '.', '=',
-    ];
+  const calculatorButtons = [
+    'AC', '+/-', '%', '÷',
+    '7', '8', '9', 'x',
+    '4', '5', '6', '-',
+    '1', '2', '3', '+',
+    '0', '.', '=',
+  ];
 
-    return (
-      <div id="calculator">
-        <div className="calc-display">
-          {displayOutput}
-        </div>
-        {
+  return (
+    <div id="calculator">
+      <div className="calc-display">
+        {displayOutput}
+      </div>
+      {
           calculatorButtons.map((button) => (
             <CalculatorButton
               value={button}
-              calculatorExecutor={this.calculatorExecutor}
+              calculatorExecutor={calculatorExecutor}
               key={button}
             />
           ))
         }
-      </div>
-    );
-  }
+    </div>
+  );
 }
