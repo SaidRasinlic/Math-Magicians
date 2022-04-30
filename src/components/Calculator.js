@@ -14,10 +14,10 @@ export default class Calculator extends React.Component {
       operation: null,
     };
 
-    this.performCalculation = this.performCalculation.bind(this);
+    this.calculatorExecutor = this.calculatorExecutor.bind(this);
   }
 
-  performCalculation(buttonName) {
+  calculatorExecutor(buttonName) {
     const { total, next, operation } = calculate(this.state, buttonName);
     let { displayOutput } = this.state;
 
@@ -37,31 +37,28 @@ export default class Calculator extends React.Component {
 
   render() {
     const { displayOutput } = this.state;
+    const calculatorButtons = [
+      'AC', '+/-', '%', '÷',
+      '7', '8', '9', 'x',
+      '4', '5', '6', '-',
+      '1', '2', '3', '+',
+      '0', '.', '=',
+    ];
 
     return (
       <div id="calculator">
         <div className="calc-display">
           {displayOutput}
         </div>
-        <CalculatorButton value="AC" performCalculation={this.performCalculation} />
-        <CalculatorButton value="+/-" performCalculation={this.performCalculation} />
-        <CalculatorButton value="%" performCalculation={this.performCalculation} />
-        <CalculatorButton value="÷" orangeCell performCalculation={this.performCalculation} />
-        <CalculatorButton value="7" performCalculation={this.performCalculation} />
-        <CalculatorButton value="8" performCalculation={this.performCalculation} />
-        <CalculatorButton value="9" performCalculation={this.performCalculation} />
-        <CalculatorButton value="x" orangeCell performCalculation={this.performCalculation} />
-        <CalculatorButton value="4" performCalculation={this.performCalculation} />
-        <CalculatorButton value="5" performCalculation={this.performCalculation} />
-        <CalculatorButton value="6" performCalculation={this.performCalculation} />
-        <CalculatorButton value="-" orangeCell performCalculation={this.performCalculation} />
-        <CalculatorButton value="1" performCalculation={this.performCalculation} />
-        <CalculatorButton value="2" performCalculation={this.performCalculation} />
-        <CalculatorButton value="3" performCalculation={this.performCalculation} />
-        <CalculatorButton value="+" orangeCell performCalculation={this.performCalculation} />
-        <CalculatorButton value="0" spanCell performCalculation={this.performCalculation} />
-        <CalculatorButton value="." performCalculation={this.performCalculation} />
-        <CalculatorButton value="=" orangeCell performCalculation={this.performCalculation} />
+        {
+          calculatorButtons.map((button) => (
+            <CalculatorButton
+              value={button}
+              calculatorExecutor={this.calculatorExecutor}
+              key={button}
+            />
+          ))
+        }
       </div>
     );
   }
