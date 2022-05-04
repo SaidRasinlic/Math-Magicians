@@ -45,7 +45,7 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@GitHub/SaidRasinlic](https://github.com/SaidRasinlic)
 - Twitter: [@Twitter/SaidRasinlic](https://twitter.com/SaidRasinlic)
-- LinkedIn: [LinkedIn/SaidRasinlic](https://www.linkedin.com/in/saidrasinlic)
+- LinkedIn: [@LinkedIn/SaidRasinlic](https://www.linkedin.com/in/saidrasinlic)
 
 ## 🤝 Contributing
 
