@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Math-Magicians/static/css/main.7dffa038.css",
+    "main.js": "/Math-Magicians/static/js/main.b0a6c4d9.js",
+    "static/media/godshand.gif": "/Math-Magicians/static/media/godshand.a5ec4720f0d57724e26f.gif",
+    "static/media/background3.png": "/Math-Magicians/static/media/background3.c03b64c307f16cd91125.png",
+    "static/media/removed.png": "/Math-Magicians/static/media/removed.839edace0f3f63fd4962.png",
+    "index.html": "/Math-Magicians/index.html",
+    "main.7dffa038.css.map": "/Math-Magicians/static/css/main.7dffa038.css.map",
+    "main.b0a6c4d9.js.map": "/Math-Magicians/static/js/main.b0a6c4d9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7dffa038.css",
+    "static/js/main.b0a6c4d9.js"
+  ]
+}
