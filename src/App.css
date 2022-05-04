@@ -18,7 +18,7 @@ html {
   font-size: 40px;
   font-weight: bolder;
   letter-spacing: 1px;
-  color: #CEDDEF;
+  color: #ceddef;
 }
 
 body {
@@ -135,18 +135,16 @@ body {
 .nav-items a {
   color: #f2f2f2;
   padding: 10px 30px;
-  border-bottom: 2px solid #5893D4;
+  border-bottom: 2px solid #5893d4;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
 }
 
 .active {
-  color: #5893D4 !important;
-  border-bottom: 2px solid #5893D4 !important;
-
+  color: #5893d4 !important;
+  border-bottom: 2px solid #5893d4 !important;
 }
-
 
 #main {
   margin: 50px;
@@ -159,10 +157,6 @@ body {
   color: white;
 }
 
-.quote-wrapper{
-  display: flex;
-  justify-content: center;
-}
 .world {
   z-index: 0;
   width: 920px;
