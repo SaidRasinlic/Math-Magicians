@@ -21,7 +21,8 @@
 
 ## Live Demo
 
-[Live Demo Link](https://saidrasynl-math-magicians.netlify.app/)
+[Netlify Live Demo Link](https://saidrasynl-math-magicians.netlify.app/)
+[Heroku Live Demo Link](https://saidrasynl-math-magicians.herokuapp.com/)
 
 ## Getting Started
 
