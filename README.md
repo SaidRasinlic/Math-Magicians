@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://saidrasinlic.github.io/Math-Magicians/)
+[Live Demo Link](https://saidrasynl-math-magicians.netlify.app/)
 
 ## Getting Started
 
