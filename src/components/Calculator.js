@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/calculator.css';
 import CalculatorButton from './CalculatorButton';
 import calculate from '../logic/calculate';
+import image from '../assets/images/removed.png';
 
 export default function Calculator() {
   const [calculator, setCalculatorState] = useState(
@@ -40,11 +41,16 @@ export default function Calculator() {
   ];
 
   return (
-    <div id="calculator">
-      <div className="calc-display">
-        {displayOutput}
+    <div className="calculator-page">
+      <div className="calculator-content">
+        <h1 className="calc-title" style={{ color: '#f5913e' }}>Let&apos;s do some Math!</h1>
+        <img className="calculator-img" src={image} alt="banner" />
       </div>
-      {
+      <div id="calculator">
+        <div className="calc-display">
+          {displayOutput}
+        </div>
+        {
           calculatorButtons.map((button) => (
             <CalculatorButton
               value={button}
@@ -53,6 +59,7 @@ export default function Calculator() {
             />
           ))
         }
+      </div>
     </div>
   );
 }
